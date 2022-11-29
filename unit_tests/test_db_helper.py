@@ -33,18 +33,14 @@ class Testdb_helper(unittest.TestCase):
         assert url_info != None
 
     def test_insert_url(self):
-        url_info = {'0': '24330000', '1': '2022-11-26 18:05:12', '2': 'http://222.138.204.19:39382/Mozi.m',
-                    '3': 'online',
-                    '4': 'None', '5': 'malware_download', '6': 'elf,Mozi', '7': 'https://urlhaus.abuse.ch/url/2433019/',
-                    '8': 'lrz_urlhaus'}
+        url_info = { 'url': 'http://222.138.204.19:39382/Mozi.m'}
+
         success, idx = self.DB.insert_url(url_info)
         assert success == True
 
     def test_insert_urls(self):
         url_info = [
-            {'0': '24330000', '1': '2022-11-26 18:05:12', '2': 'http://222.138.204.19:39382/Mozi.m', '3': 'online',
-             '4': 'None', '5': 'malware_download', '6': 'elf,Mozi', '7': 'https://urlhaus.abuse.ch/url/2433019/',
-             '8': 'lrz_urlhaus'}]
+            {'url': 'http://222.138.204.19:39382/Mozi.m'}]
         success, idx = self.DB.insert_urls(url_info)
         assert success == True
 
